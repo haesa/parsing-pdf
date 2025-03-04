@@ -39,7 +39,7 @@ function App() {
           cursor: 'pointer',
         }}
       >
-        파일 선택
+        PDF 업로드
         <input
           style={{
             display: 'none',
