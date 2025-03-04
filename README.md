@@ -29,7 +29,7 @@ npm install
 3️⃣ 프로젝트 실행
 
 ```bash
-npm run start
+npm run dev
 ```
 
 <br />
