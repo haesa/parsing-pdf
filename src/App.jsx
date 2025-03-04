@@ -1,17 +1,23 @@
 import { useRef, useState } from 'react';
 
+import { parsePDF } from './lib/parse';
+
 import PDFViewer from './PDFViewer';
 
 function App() {
   const canvasRef = useRef();
   const [pdfUrl, setPdfUrl] = useState('');
 
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     URL.revokeObjectURL(pdfUrl);
 
     const file = event.target.files?.[0];
     const url = URL.createObjectURL(file);
     setPdfUrl(url);
+
+    const result = await parsePDF(url);
+
+    console.dir(result);
   };
 
   return (
